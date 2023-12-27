@@ -3,7 +3,7 @@ import React, { FC, Suspense } from 'react'
 import { PostImage as PostImageType, PostImages } from '@/types'
 import PostImage from '../PostImage'
 
-const LastImagesComp = ({last}) => {
+const LastImagesComp:FC<{postImages?:PostImageType[]}> = ({postImages}) => {
   //console.log('PASADO PROPS-FC',last.length);
   //let imagenes = Object.entries(postImages).flat()
   
@@ -12,7 +12,7 @@ const LastImagesComp = ({last}) => {
     <View style={styles.container}>
       <Text style={styles.title}>Last 5 Days</Text>
      <ScrollView style={styles.scroll}>
-       {last.map((p:PostImageType,index:number)=><PostImage key={`p-${p.title}-${p.date}-${index}`} post={p}/>)}
+       {postImages?.map((p:PostImageType,index:number)=><PostImage key={`p-${p.title}-${p.date}-${index}`} post={p}/>)}
      </ScrollView>
     </View>
      

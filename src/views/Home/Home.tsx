@@ -49,7 +49,7 @@ const Home = () => {
     <View style={styles.container}>
       <Header />
       <TodayImage {...todayImage} />
-      <LastImagesComp last={lastImages}/>
+      <LastImagesComp {...lastImages}/>
     </View>
   )
 }
